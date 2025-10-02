@@ -2,10 +2,10 @@ import os
 import google.generativeai as genai
 from colorama import init, Fore, Style
 
-# Initialize colorama (Windows friendly)
+
 init(autoreset=True)
 
-# --- API Key Configuration ---
+
 API_KEY = os.getenv("GEMINI_API_KEY")
 if not API_KEY:
     print(Fore.RED + "FATAL ERROR: GEMINI_API_KEY environment variable not set.")
@@ -14,7 +14,7 @@ if not API_KEY:
 
 genai.configure(api_key=API_KEY)
 
-# --- Initialize Gemini model ---
+
 try:
     model = genai.GenerativeModel("gemini-2.5-flash")
 except Exception as e:
